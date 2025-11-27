@@ -1,0 +1,1 @@
+# Labitoria.JD.Winforms.UserManager
