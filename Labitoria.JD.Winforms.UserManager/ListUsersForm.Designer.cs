@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListUsersForm));
             label4 = new Label();
             btnSave = new Button();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dgvViewUsers = new DataGridView();
+            button2 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvViewUsers).BeginInit();
             SuspendLayout();
             // 
             // label4
@@ -69,34 +71,44 @@
             button1.ForeColor = Color.DimGray;
             button1.Location = new Point(0, 57);
             button1.Name = "button1";
-            button1.Size = new Size(547, 41);
+            button1.Size = new Size(547, 42);
             button1.TabIndex = 12;
             button1.Text = "New";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // dataGridView1
+            // dgvViewUsers
             // 
-            dataGridView1.BackgroundColor = Color.Linen;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Top;
-            dataGridView1.GridColor = Color.DimGray;
-            dataGridView1.Location = new Point(0, 98);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(547, 322);
-            dataGridView1.TabIndex = 13;
+            dgvViewUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvViewUsers.Location = new Point(12, 124);
+            dgvViewUsers.Name = "dgvViewUsers";
+            dgvViewUsers.Size = new Size(423, 323);
+            dgvViewUsers.TabIndex = 13;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.Location = new Point(449, 124);
+            button2.Name = "button2";
+            button2.Size = new Size(86, 94);
+            button2.TabIndex = 14;
+            button2.UseVisualStyleBackColor = true;
             // 
             // ListUsersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(547, 509);
-            Controls.Add(dataGridView1);
+            Controls.Add(button2);
+            Controls.Add(dgvViewUsers);
             Controls.Add(button1);
             Controls.Add(btnSave);
             Controls.Add(label4);
             Name = "ListUsersForm";
             Text = "ListUsersForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += ListUsersForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvViewUsers).EndInit();
             ResumeLayout(false);
         }
 
@@ -104,6 +116,7 @@
         private Label label4;
         private Button btnSave;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvViewUsers;
+        private Button button2;
     }
 }

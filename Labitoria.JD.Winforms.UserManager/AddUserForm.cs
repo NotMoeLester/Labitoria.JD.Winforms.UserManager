@@ -26,14 +26,20 @@ namespace Labitoria.JD.Winforms.UserManager
             }
             else
             {
-                User userToSave = new User(fullName,username,password);
+                User userToSave = new User();
+                userToSave.FullName = fullName;
+                userToSave.Username = username;
+                userToSave.Password = password;
+
                 UserRepository repository = new UserRepository();
                 bool isSaved = repository.Add(userToSave);
 
                 if (isSaved) 
                 {
-                    MessageBox.Show("Boy na-saved!","Successful",
-                        MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Boy na-saved!","Successful", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    txtFullName.Clear();
+                    txtUsername.Clear();
+                    txtPassword.Clear();
                 }
             }
         }

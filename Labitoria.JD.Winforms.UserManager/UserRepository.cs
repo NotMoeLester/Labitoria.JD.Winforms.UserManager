@@ -21,13 +21,12 @@ namespace Labitoria.JD.Winforms.UserManager
 
         public List<User> GetAll() 
         {
-            return _connection.Table<User>();
-            return new List<User>();
+            return _connection.Table<User>().ToList();
         }
 
         public User Get(int id) 
         {
-            return new User("DummyFullname","DummyUsername","DummyPassword");
+            return _connection.Find<User>(id);
         }
     }
 }
