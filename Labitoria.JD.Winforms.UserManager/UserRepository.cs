@@ -20,7 +20,8 @@ namespace Labitoria.JD.Winforms.UserManager
         }
 
         public List<User> GetAll() 
-        { 
+        {
+            return _connection.Table<User>();
             return new List<User>();
         }
 
